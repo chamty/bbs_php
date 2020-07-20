@@ -1,0 +1,90 @@
+body {
+  background: #F7F7F7;
+  font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+
+#appTitle {
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#inputBox {
+  text-align: left;
+  width: 700px;
+  margin: 80px auto;
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+
+  #inputName {
+    input {
+      width: 250px;
+      height: 30px;
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      margin-bottom: 5px;
+    }
+  }
+
+  #inputMessage {
+    textarea {
+      width: 700px;
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+  }
+
+  #inputSubmit {
+    padding: 7px 17px;
+    border: none;
+    border-radius: 3px;
+    background: #37A1E5;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.tweetBox {
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 20px;
+  text-align: left;
+  width: 700px;
+  margin: 30px auto;
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .tweetUser {
+    display: flex;
+
+    .tweetName {
+      margin-right: 20px;
+    }
+
+    .tweetTime {
+      color: #999;
+    }
+  }
+
+  .tweet {
+    margin: 0px 0 10px 0;
+  }
+}
