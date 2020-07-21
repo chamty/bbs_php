@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ひとこと掲示板</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+  <div id="container">
+    <h1 id="appTitle">ひとこと掲示板</h1>
+    <div id="inputBox">
+      <div id="inputName">
+        <p>名前</p><span :class="{'danger1' : isActive1, 'normal1': notError1}">※名前を入力してください</span></br>
+        <input type="text" v-model="newInputName">
+      </div>
+      <div id="inputMessage">
+        <p>メッセージ</p><span :class="{'danger2' : isActive2, 'normal2': notError2}">※メッセージを入力してください</span>
+        <textarea v-model="newInputMessage" cols="30" rows="10"></textarea>
+      </div>
+      <button id="inputSubmit" @click="nowDate(); redMessage(); addTweet()">書き込む</button>
+    </div>
+    <hr width="105%">
+    <div id="tweets">
+      <div class="tweetBox" v-for="(tweet, index) in tweets">
+        <div class="tweetUser">
+          <p class="tweetName">{{ tweet.name }} </p>
+          <p class="tweetTime">{{ tweet.time }} </p>
+        </div>
+        <p class="tweet">{{ tweet.message }}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

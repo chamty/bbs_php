@@ -1,0 +1,114 @@
+@charset "UTF-8";
+body {
+  background: #F7F7F7;
+  font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+#appTitle {
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#inputBox {
+  text-align: left;
+  width: 700px;
+  margin: 80px auto;
+}
+
+#inputBox p {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+#inputBox .normal1, #inputBox .normal2 {
+  display: none;
+}
+
+#inputBox .danger1, #inputBox .danger2 {
+  color: red;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+#inputBox #inputName input {
+  width: 250px;
+  height: 30px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+#inputBox #inputMessage textarea {
+  width: 700px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+#inputBox #inputSubmit {
+  padding: 7px 17px;
+  border: none;
+  border-radius: 3px;
+  background: #37A1E5;
+  color: #fff;
+  cursor: pointer;
+  outline: 0;
+  border-bottom: 4px solid #627295;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+#inputBox #inputSubmit:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  margin: 0 0 4px 0;
+}
+
+.tweetBox {
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 20px;
+  text-align: left;
+  width: 700px;
+  margin: 30px auto;
+}
+
+.tweetBox p {
+  font-size: 1.3rem;
+}
+
+.tweetBox .tweetUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tweetBox .tweetUser .tweetName {
+  margin-right: 20px;
+}
+
+.tweetBox .tweetUser .tweetTime {
+  color: #999;
+}
+
+.tweetBox .tweet {
+  margin: 0px 0 10px 0;
+}
+/*# sourceMappingURL=style.css.map */
