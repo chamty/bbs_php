@@ -14,32 +14,23 @@
     <h1 id="appTitle">ひとこと掲示板</h1>
     <div id="inputBox">
       <div id="inputName">
-        <p>名前</p>
+        <p>名前</p><span :class="{'danger1' : isActive1, 'normal': notError}">※名前を入力してください</span></br>
         <input type="text" v-model="newInputName">
       </div>
       <div id="inputMessage">
-        <p>メッセージ</p>
+        <p>メッセージ</p><span :class="{'danger2' : isActive2, 'normal': notError}">※メッセージを入力してください</span>
         <textarea v-model="newInputMessage" cols="30" rows="10"></textarea>
       </div>
-      <button id="inputSubmit" @click="addTweet">書き込む</button>
+      <button id="inputSubmit" @click="nowDate(); redMessage(); addTweet()">書き込む</button>
     </div>
     <hr width="105%">
     <div id="tweets">
       <div class="tweetBox" v-for="(tweet, index) in tweets">
         <div class="tweetUser">
           <p class="tweetName">{{ tweet.name }} </p>
-          <p class="tweetTime">2020年7月20日23:02</p>
+          <p class="tweetTime">{{ tweet.time }} </p>
         </div>
         <p class="tweet">{{ tweet.message }}</p>
-      </div>
-    </div>
-    <div id="tweets">
-      <div class="tweetBox">
-        <div class="tweetUser">
-          <p class="tweetName">名前</p>
-          <p class="tweetTime">2020年7月20日23:00</p>
-        </div>
-        <p class="tweet">こんにちは！</p>
       </div>
     </div>
   </div>
