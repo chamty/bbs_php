@@ -32,7 +32,7 @@ html {
   display: inline-block;
 }
 
-#inputBox .normal {
+#inputBox .normal1, #inputBox .normal2 {
   display: none;
 }
 

@@ -8,7 +8,8 @@
       newInputMessage: '',
       isActive1: false,
       isActive2: false,
-      notError: true,
+      notError1: true,
+      notError2: true,
       tweets: [],
     },
     methods: {
@@ -35,15 +36,30 @@
       },
       redMessage() {
         if (!this.newInputName && !this.newInputMessage) {
-        this.isActive1 = !this.isActive1;
-        this.isActive2 = !this.isActive2;
-        this.notError = !this.notError;
+        this.isActive1 = true;
+        this.isActive2 = true;
+        this.notError1 = false;
+        this.notError2 = false;
         } else if (!this.newInputName) {
-          this.isActive1 = !this.isActive1;
-          this.notError = !this.notError;
+          this.isActive1 = true;
+          this.notError1 = false;
+          if (this.newInputName) {
+            this.isActive1 = false;
+            this.notError1 =true;
+          }
         } else if (!this.newInputMessage) {
-          this.isActive2 = !this.isActive2;
-          this.notError = !this.notError;
+          this.isActive2 = true;
+          this.notError2 = false;
+        }
+
+        if (this.newInputName) {
+          this.isActive1 = false;
+          this.notError1 =true;
+        }
+
+        if (this.newInputMessage) {
+          this.isActive2 = false;
+          this.notError2 =true;
         }
       }
     }

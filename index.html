@@ -14,11 +14,11 @@
     <h1 id="appTitle">ひとこと掲示板</h1>
     <div id="inputBox">
       <div id="inputName">
-        <p>名前</p><span :class="{'danger1' : isActive1, 'normal': notError}">※名前を入力してください</span></br>
+        <p>名前</p><span :class="{'danger1' : isActive1, 'normal1': notError1}">※名前を入力してください</span></br>
         <input type="text" v-model="newInputName">
       </div>
       <div id="inputMessage">
-        <p>メッセージ</p><span :class="{'danger2' : isActive2, 'normal': notError}">※メッセージを入力してください</span>
+        <p>メッセージ</p><span :class="{'danger2' : isActive2, 'normal2': notError2}">※メッセージを入力してください</span>
         <textarea v-model="newInputMessage" cols="30" rows="10"></textarea>
       </div>
       <button id="inputSubmit" @click="nowDate(); redMessage(); addTweet()">書き込む</button>
