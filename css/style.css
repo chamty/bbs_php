@@ -63,22 +63,22 @@ html {
   padding: 7px 17px;
   border: none;
   border-radius: 3px;
-  background: #4394CD;
+  background: #54B8FF;
   color: #fff;
   cursor: pointer;
   outline: 0;
-  border-bottom: 4px solid #627295;
+  border-bottom: 3px solid #698AAB;
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
 
 #inputBox #inputSubmit:active {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
   border-bottom: none;
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
 }
 
 .tweetBox {
