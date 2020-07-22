@@ -1,15 +1,16 @@
 @charset "UTF-8";
 body {
-  background: #F7F7F7;
+  background: #EFEFEF;
   font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 }
 
 html {
   font-size: 62.5%;
+  overflow-y: scroll;
 }
 
 #container {
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -55,14 +56,14 @@ html {
   width: 700px;
   border: 1px solid #DDDDDD;
   border-radius: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 #inputBox #inputSubmit {
   padding: 7px 17px;
   border: none;
   border-radius: 3px;
-  background: #37A1E5;
+  background: #4394CD;
   color: #fff;
   cursor: pointer;
   outline: 0;

@@ -29,8 +29,8 @@
         const year = date.getFullYear();
         const month = date.getMonth() + 1;
         const day = date.getDate();
-        const hour = date.getHours();
-        const minute = date.getMinutes();
+        const hour = date.getHours().toString().padStart(2, '0');
+        const minute = date.getMinutes().toString().padStart(2, '0');
 
         this.newInputTime = year + '年' + month + '月' + day + '日' + hour + ':' + minute;
       },
