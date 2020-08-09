@@ -25,37 +25,42 @@ html {
   font-size: 2rem;
 }
 
-#inputBox {
+form {
   text-align: left;
   width: 700px;
   margin: 80px auto;
 
-  p {
+  dt {
     font-size: 1.4rem;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
+    border-left: 4px solid pink;
+    padding: 0 10px;
+    margin: 30px 0 10px 0;
 
-  .normal1, .normal2 {
-    display: none;
-  }
-  
-  .danger1, .danger2 {
-    color: red;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    display: inline-block;
-  }
-
-  #inputName {
-    input {
-      width: 250px;
-      height: 30px;
-      border: 1px solid #DDDDDD;
-      border-radius: 3px;
-      margin-bottom: 10px;
+    .required {
+      margin: 0 5px;
+      padding: 1px 5px;
+      background: pink;
+      color: #fff;
+      border-radius: 4px;
     }
   }
+
+  dd {
+    margin: 5px 0;
+    font-size: 1.4rem;
+
+    input {
+      height: 25px;
+      width: 250px;
+    }
+  }
+
+  .error {
+    color: pink;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
 
   #inputMessage {
     textarea {
@@ -66,10 +71,11 @@ html {
     }
   }
 
-  #inputSubmit {
-    padding: 7px 17px;
+  #inputSubmit,#inputModify {
+    margin: 20px 3px;
+    padding: 7px 10px;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     background: $button;
     color: #fff;
     cursor: pointer;
@@ -81,10 +87,10 @@ html {
       transform: translateY(3px);
       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
       border-bottom: none;
-      margin: 0 0 3px 0;
+      margin: 20px 3px;
     }
   }
-}
+
 
 .tweetBox {
   border: none;
