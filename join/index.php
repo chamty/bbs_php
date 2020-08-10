@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('../dbconnect.php');
 
   if (!empty($_POST)) {
     if ($_POST['name'] === '') {
@@ -15,11 +16,25 @@ session_start();
       $error['password'] = 'blank';
     }
 
+    // アカウントの重複チェック
+    if (empty($error)) {
+      $member = $db->prepare('SELECT COUNT(*) AS cnt FROM members WHERE email=?');
+      $member->execute(array($_POST['email']));
+      $record = $member->fetch();
+      if ($record['cnt'] > 0 ) {
+        $error['email'] = 'duplicate';
+      }
+    }
+
     if (empty($error)) {
       $_SESSION['join'] = $_POST;
       header('Location: check.php');
       exit();
     }
+  }
+
+  if ($_REQUEST['action'] === 'rewrite' && isset($_SESSION['join'])) {
+    $_POST = $_SESSION['join'];
   }
 ?>
 
@@ -35,7 +50,7 @@ session_start();
 </head>
 <body>
   <div id="container">
-    <h1 id="appTitle">ひとこと掲示板</h1>
+    <h1 id="appTitle">掲示板</h1>
     <form action="" method="post">
     <dl id="inputItems">
       <dt>ニックネーム<span class="required">必須</span></dt>
@@ -51,6 +66,9 @@ session_start();
       </dd>
       <?php if ($error['email'] === 'blank'): ?>
         <p class="error">※メールアドレスを入力してください</p>
+      <?php endif; ?>
+      <?php if ($error['email'] === 'duplicate'): ?>
+        <p class="error">※指定されたメールアドレスは、既に登録されています</p>
       <?php endif; ?>
       <dt>パスワード<span class="required">必須</span></dt>
       <dd>

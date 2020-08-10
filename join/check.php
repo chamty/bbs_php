@@ -1,8 +1,22 @@
 <?php
 session_start();
+require('../dbconnect.php');
 
 if (!isset($_SESSION['join'])) {
   header('Location: index.php');
+  exit();
+}
+
+if (!empty($_POST)) {
+  $statement = $db->prepare('INSERT INTO members SET name=?, email=?, password=?, created=NOW()');
+  echo $statement->execute(array(
+    $_SESSION['join']['name'],
+    $_SESSION['join']['email'],
+    sha1($_SESSION['join']['password'])
+  ));
+  unset($_SESSION['join']);
+
+  header('Location: thanks.php');
   exit();
 }
 ?>
@@ -12,7 +26,7 @@ if (!isset($_SESSION['join'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ひとこと掲示板</title>
+  <title>掲示板</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -21,6 +35,7 @@ if (!isset($_SESSION['join'])) {
   <div id="container">
     <h1 id="appTitle">ひとこと掲示板</h1>
     <form action="" method="post">
+    <input type="hidden" name="action" value="submit">
     <dl id="inputItems">
       <dt>ニックネーム</dt>
       <dd>
@@ -35,8 +50,7 @@ if (!isset($_SESSION['join'])) {
         <?php print(htmlspecialchars($_SESSION['join']['password'], ENT_QUOTES)); ?>
       </dd>
     </dl>
-    <button id="inputModify">修正する</button>
-    <button id="inputSubmit">登録する</button>
+    <div><a href="index.php?action=rewrite">&laquo;&nbsp;修正する</a> | <input type="submit" id="inputSubmit" value="登録する"></div>
     </form>
   </div>
 </body>
