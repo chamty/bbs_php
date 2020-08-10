@@ -25,7 +25,7 @@ html {
 form {
   text-align: left;
   width: 700px;
-  margin: 80px auto;
+  margin: 70px auto 20px;
 }
 
 form dt {
@@ -61,7 +61,6 @@ form .error {
   width: 700px;
   border: 1px solid #DDDDDD;
   border-radius: 3px;
-  margin-bottom: 25px;
 }
 
 #inputMessage p {
@@ -113,18 +112,19 @@ form .error {
   font-size: 1.3rem;
 }
 
-.tweetBox .tweetUser {
+.tweetBox .tweetInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.tweetBox .tweetUser .tweetName {
-  margin-right: 20px;
+.tweetBox .tweetInfo .tweetName {
+  margin-right: 485px;
 }
 
-.tweetBox .tweetUser .tweetTime {
+.tweetBox .tweetInfo .tweetTime {
   color: #999;
+  margin-right: 10px;
 }
 
 .tweetBox .tweet {
