@@ -119,11 +119,15 @@ form .error {
 }
 
 .tweetBox .tweetInfo .tweetName {
-  margin-right: 485px;
+  margin-right: 10px;
 }
 
 .tweetBox .tweetInfo .tweetTime {
   color: #999;
+  margin-right: 10px;
+}
+
+.tweetBox .tweetInfo .reply {
   margin-right: 10px;
 }
 

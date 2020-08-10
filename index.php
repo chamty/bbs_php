@@ -15,10 +15,11 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
 
 if (!empty($_POST)) {
   if ($_POST['message'] !== '') {
-    $message = $db->prepare('INSERT INTO posts SET member_id=?, reply_message_id=0, message=?, created=NOW()');
+    $message = $db->prepare('INSERT INTO posts SET member_id=?, message=?, reply_message_id=?, created=NOW()');
     $message->execute(array(
       $member['id'],
-      $_POST['message']
+      $_POST['message'],
+      $_POST['reply_post_id']
     ));
 
     header('Location: index.php');
@@ -33,7 +34,7 @@ if (isset($_REQUEST['res'])) {
   $response->execute(array($_REQUEST['res']));
 
   $table = $response->fetch();
-  $message = '@' . $table['name'] . ' ' . $table['message'];
+  $message = '@' . $table['name'] . ' ' . $table['message'] . ' ＜';
 }
 ?>
 
@@ -54,6 +55,7 @@ if (isset($_REQUEST['res'])) {
         <p><?php print(htmlspecialchars($member['name'], ENT_QUOTES)); ?>さん</p>
         <div id="inputMessage">
           <textarea name="message" cols="30" rows="10"><?php print(htmlspecialchars($message, ENT_QUOTES)); ?></textarea>
+          <input type="hidden" name="reply_post_id" value="<?php print(htmlspecialchars($_REQUEST['res'], ENT_QUOTES)); ?>">
         </div>
         <button id="inputSubmit">書き込む</button>
       </div>
@@ -64,9 +66,12 @@ if (isset($_REQUEST['res'])) {
       <div class="tweetBox">
         <div class="tweetInfo">
           <p class="tweetName"><?php print(htmlspecialchars($post['name'], ENT_QUOTES)); ?></p>
-          <p class="tweetTime"><?php print(htmlspecialchars($post['created'],ENT_QUOTES)); ?></p>
+          <p class="tweetTime"><a href="view.php?id=<?php print(htmlspecialchars($post['id'], ENT_QUOTES)); ?>"><?php print(htmlspecialchars($post['created'],ENT_QUOTES)); ?></a></p>
           <p class="reply"><a href="index.php?res=<?php print(htmlspecialchars($post['id'],ENT_QUOTES)); ?>">[ Re ]</a></p>
-        </div>
+        <?php if ($post['reply_message_id'] > 0): ?>
+          <p class="re_message"><a href="view.php?id=<?php print(htmlspecialchars($post['reply_message_id'], ENT_QUOTES)); ?>">返信元のメッセージ</a></p>
+        <?php endif; ?>
+          </div>
         <p class="tweet"><?php print(htmlspecialchars($post['message'], ENT_QUOTES)); ?></p>
       </div>
       <?php endforeach; ?>

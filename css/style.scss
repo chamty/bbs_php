@@ -118,11 +118,15 @@ form {
     display: flex;
 
     .tweetName {
-      margin-right: 485px;
+      margin-right: 10px;
     }
 
     .tweetTime {
       color: #999;
+      margin-right: 10px;
+    }
+
+    .reply {
       margin-right: 10px;
     }
   }
