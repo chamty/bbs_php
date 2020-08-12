@@ -22,18 +22,32 @@ $posts->execute(array($_REQUEST['id']));
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header>
+    <div id="header-left">
+      <h1 id="appTitle">みんなのつぶやき</h1>
+    </div>
+    <div id="header-right">
+      <p id="logout"></p>
+    </div>
+  </header>
   <div id="container">
-    <h1 id="appTitle">ひとこと掲示板</h1>
     <div id="tweets">
       <div class="tweetBox">
       <?php if ($post = $posts->fetch()): ?>
         <div class="tweetInfo">
           <p class="tweetName"><?php print(htmlspecialchars($post['name'], ENT_QUOTES)); ?></p>
           <p class="tweetTime"><?php print(htmlspecialchars($post['created'],ENT_QUOTES)); ?></p>
-          <p class="reply"><a href="index.php?res=<?php print(htmlspecialchars($post['id'],ENT_QUOTES)); ?>">[ Re ]</a></p>
-          <p class="re_message"><a href="#">返信元のメッセージ</a></p>
         </div>
         <p class="tweet"><?php print(htmlspecialchars($post['message'], ENT_QUOTES)); ?></p>
+        <div class="tweetInfo_2">
+          <p class="reply"><a href="index.php?res=<?php print(htmlspecialchars($post['id'],ENT_QUOTES)); ?>">[ Re ]</a></p>
+          <?php if ($post['reply_message_id'] > 0): ?>
+            <p class="re_message"><a href="view.php?id=<?php print(htmlspecialchars($post['reply_message_id'], ENT_QUOTES)); ?>">[ 返信元のメッセージ ]</a></p>
+          <?php endif; ?>
+          <?php if ($_SESSION['id'] == $post['member_id']): ?>
+            <p class="delete"><a href="delete.php?id=<?php print(htmlspecialchars($post['id'], ENT_QUOTES)); ?>">[ 削除 ]</a></p>
+          <?php endif; ?>
+        </div>
       <?php else: ?>
         <p>その投稿は削除されたか、URLが間違っています</p>
       <?php endif; ?>
