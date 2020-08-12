@@ -2,24 +2,47 @@
 body {
   background: #FAFAFA;
   font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 html {
   font-size: 62.5%;
   overflow-y: scroll;
+  color: #333;
+}
+
+html a {
+  text-decoration: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #fff;
+}
+
+header #appTitle {
+  text-align: center;
+  font-size: 2rem;
+}
+
+header #logout {
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+
+header #logout a {
+  color: #333;
 }
 
 #container {
   width: 800px;
   margin: 0 auto;
   font-size: 1.4rem;
-}
-
-#appTitle {
-  width: 500px;
-  margin: 20px auto;
-  text-align: center;
-  font-size: 2rem;
 }
 
 form {
@@ -105,7 +128,7 @@ form .error {
   padding: 10px 20px;
   text-align: left;
   width: 700px;
-  margin: 30px auto;
+  margin: 25px auto;
 }
 
 .tweetBox p {
@@ -119,19 +142,48 @@ form .error {
 }
 
 .tweetBox .tweetInfo .tweetName {
-  margin-right: 10px;
+  margin-right: 15px;
+  font-weight: bold;
 }
 
-.tweetBox .tweetInfo .tweetTime {
-  color: #999;
-  margin-right: 10px;
-}
-
-.tweetBox .tweetInfo .reply {
-  margin-right: 10px;
+.tweetBox .tweetInfo .tweetTime a {
+  color: #808E9B;
 }
 
 .tweetBox .tweet {
   margin: 0px 0 10px 0;
+}
+
+.tweetBox .tweetInfo_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tweetBox .tweetInfo_2 a {
+  color: #808E9B;
+}
+
+.tweetBox .tweetInfo_2 .reply {
+  margin-right: 10px;
+}
+
+.tweetBox .tweetInfo_2 .re_message {
+  margin-right: 10px;
+}
+
+.tweetBox .tweetInfo_2 .delete a {
+  color: pink;
+}
+
+ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+ul li {
+  margin: 0 10px;
 }
 /*# sourceMappingURL=style.css.map */

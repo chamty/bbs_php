@@ -46,8 +46,15 @@ if (!empty($_POST)) {
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header>
+      <div id="header-left">
+        <h1 id="appTitle">みんなのつぶやき</h1>
+      </div>
+      <div id="header-right">
+        <p id="logout"></p>
+      </div>
+  </header>
   <div id="container">
-    <h1 id="appTitle">掲示板</h1>
     <form action="" method="post">
     <dl id="inputItems">
       <?php if ($error['login'] === 'blank'): ?>

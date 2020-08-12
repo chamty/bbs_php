@@ -32,8 +32,15 @@ if (!empty($_POST)) {
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
+  <header>
+    <div id="header-left">
+      <h1 id="appTitle">みんなのつぶやき</h1>
+    </div>
+    <div id="header-right">
+      <p id="logout"></p>
+    </div>
+  </header>
   <div id="container">
-    <h1 id="appTitle">ひとこと掲示板</h1>
     <form action="" method="post">
     <input type="hidden" name="action" value="submit">
     <dl id="inputItems">

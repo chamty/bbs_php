@@ -1,15 +1,46 @@
+$header: #fff;
 $background: #FAFAFA;
 $button: #54B8FF;
 $button-shadow: #698AAB;
+$color: #333;
+$color_sb: #808E9B;
+$color_caution: pink;
 
 body {
   background: $background;
   font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 html {
   font-size: 62.5%;
   overflow-y:scroll;
+  color: $color;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  background: $header;
+
+  #appTitle {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  #logout {
+    font-size: 1.4rem;
+    line-height: 3rem;
+
+    a {
+      color: $color;
+    }
+  }
 }
 
 #container {
@@ -18,28 +49,20 @@ html {
   font-size: 1.4rem;
 }
 
-
-#appTitle {
-  width: 500px;
-  margin: 20px auto;
-  text-align: center;
-  font-size: 2rem;
-}
-
 form {
   text-align: left;
   width: 700px;
   margin: 70px auto 20px;
 
   dt {
-    border-left: 4px solid pink;
+    border-left: 4px solid $color_caution;
     padding: 0 10px;
     margin: 30px 0 10px 0;
 
     .required {
       margin: 0 5px;
       padding: 1px 5px;
-      background: pink;
+      background: $color_caution;
       color: #fff;
       border-radius: 4px;
     }
@@ -55,7 +78,7 @@ form {
   }
 
   .error {
-    color: pink;
+    color: $color_caution;
     font-size: 1.2rem;
     margin: 0;
   }
@@ -69,13 +92,13 @@ form {
     }
 
     p {
-      border-left: 4px solid pink;
+      border-left: 4px solid $color_caution;
       padding: 0 10px;
       margin: 30px 0 10px 0;
     }
 
     .error {
-      color: pink;
+      color: $color_caution;
       font-size: 1.2rem;
       margin: 0 10px;
     }
@@ -108,7 +131,7 @@ form {
   padding: 10px 20px;
   text-align: left;
   width: 700px;
-  margin: 30px auto;
+  margin: 25px auto;
 
   p {
     font-size: 1.3rem;
@@ -118,20 +141,49 @@ form {
     display: flex;
 
     .tweetName {
-      margin-right: 10px;
+      margin-right: 15px;
+      font-weight: bold;
     }
 
     .tweetTime {
-      color: #999;
-      margin-right: 10px;
-    }
-
-    .reply {
-      margin-right: 10px;
+      a {
+        color: $color_sb;
+      }
     }
   }
 
   .tweet {
     margin: 0px 0 10px 0;
+  }
+
+  .tweetInfo_2 {
+    display: flex;
+
+    a {
+      color: $color_sb;
+    }
+
+    .reply {
+      margin-right: 10px;
+    }
+
+    .re_message {
+      margin-right: 10px;
+    }
+
+    .delete {
+      a {
+        color: $color_caution;
+      }
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  display: flex;
+
+  li {
+  margin: 0 10px;
   }
 }
