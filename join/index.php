@@ -88,7 +88,7 @@ require('../dbconnect.php');
         <p class="error">※パスワードを入力してください</p>
       <?php endif; ?>
     </dl>
-    <button id="inputSubmit">確認画面へ</button>
+    <div><button id="inputSubmit">確認画面へ</button> | <a href="../login.php">ログインはこちら</a></div>
     </form>
   </div>
 </body>

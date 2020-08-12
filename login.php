@@ -71,7 +71,7 @@ if (!empty($_POST)) {
       <dd>
         <input type="text" name="password" value="<?php print(htmlspecialchars($_POST['password'], ENT_QUOTES)); ?>">
       </dd>
-      <input type="checkbox" name="save" value="on">
+      <input type="checkbox" name="save" value="on" class="memory">
       <label for="save">メールアドレスを記憶する</label>
     </dl>
     <div><input type="submit" id="inputSubmit" value="ログイン"> | <a href="join/index.php">新規登録はこちら</a></div>

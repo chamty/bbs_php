@@ -80,6 +80,10 @@ form .error {
   margin: 0;
 }
 
+form .memory {
+  margin: 15px 0 0 0;
+}
+
 #inputMessage textarea {
   width: 700px;
   border: 1px solid #DDDDDD;
